@@ -17,6 +17,13 @@ val linearLayoutManager = LinearLayoutManager(this)
 recyclerview.layoutManager = linearLayoutManager
 recyclerview.adapter = RecyclerViewAdapterWithViewBinding( listOf("a","b"))
 
+OR
+
+with(recyclerview) {
+            layoutManager = LinearLayoutManager(this@ActivityName)
+            adapter = Adapter(listOf("a","b"))
+        }
+
 */
 
 

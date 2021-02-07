@@ -13,13 +13,20 @@ usage
 
 val linearLayoutManager = LinearLayoutManager(this)
 recyclerview.layoutManager = linearLayoutManager
-recyclerview.adapter = RecyclerViewAdapter( listOf("a","b"))
+recyclerview.adapter = RecyclerViewAdapterWithViewBinding( listOf("a","b"))
+
+OR
+
+        with(recyclerview) {
+            layoutManager = LinearLayoutManager(this@ActivityName)
+            adapter = Adapter(listOf("a","b"))
+        }
 
 */
 
 
 class RecyclerViewAdapter(var list: List<String>) :
-    RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
+        RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.text_view)
@@ -29,7 +36,7 @@ class RecyclerViewAdapter(var list: List<String>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater
-            .inflate(R.layout.item_view_recyclerview, parent, false)
+                .inflate(R.layout.item_view_recyclerview, parent, false)
 
         return MyViewHolder(view)
     }
@@ -39,7 +46,7 @@ class RecyclerViewAdapter(var list: List<String>) :
     }
 
     override fun getItemCount(): Int {
-       return list.size
+        return list.size
     }
 }
 

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android directory</string>
+    <string name="will_delete_the_given_row">Will delete the given row</string>
 </resources>
