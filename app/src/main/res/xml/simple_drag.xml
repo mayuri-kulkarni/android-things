@@ -11,7 +11,6 @@
 <!--     stops motion when swipe stops   motion:onTouchUp="stop"-->
         <OnSwipe
             motion:dragDirection="dragRight"
-            motion:onTouchUp="stop"
             >
 
         </OnSwipe>

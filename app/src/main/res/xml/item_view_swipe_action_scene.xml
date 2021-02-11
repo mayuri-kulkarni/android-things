@@ -5,10 +5,16 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
-        motion:duration="1000">
+        motion:duration="1000"
+        motion:autoTransition="none"
+        >
         <KeyFrameSet></KeyFrameSet>
 
-        <OnSwipe motion:dragDirection="dragLeft">
+        <OnSwipe
+            motion:dragDirection="dragStart"
+            motion:onTouchUp="decelerateAndComplete"
+
+            >
 
         </OnSwipe>
     </Transition>
@@ -22,9 +28,8 @@
             motion:layout_constraintTop_toTopOf="parent" />
         <Constraint
             android:id="@+id/iv_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
             motion:layout_constraintBottom_toBottomOf="@+id/item_content"
             motion:layout_constraintStart_toEndOf="@+id/item_content"
             motion:layout_constraintTop_toTopOf="@+id/item_content"
@@ -39,16 +44,19 @@
             android:id="@+id/item_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="48dp"
-            android:translationX="-48dp"
+            android:translationX="-40dp"
+            android:layout_marginStart="-40dp"
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent" />
         <Constraint
             android:id="@+id/iv_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
+            android:layout_width="40dp"
+            android:translationX="-40dp"
+            android:layout_height="match_parent"
+            motion:layout_constraintStart_toEndOf="@+id/item_content"
+            motion:layout_constraintTop_toTopOf="@+id/item_content"
+            motion:layout_constraintBottom_toBottomOf="@+id/item_content"
 
-            motion:layout_constraintStart_toEndOf="@+id/item_content" />
+            />
     </ConstraintSet>
 </MotionScene>

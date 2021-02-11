@@ -1,4 +1,4 @@
-package com.mk.androiddirectory.activities
+package com.mk.androiddirectory.util.activityUtil
 
 import android.transition.Slide
 import android.view.Gravity
